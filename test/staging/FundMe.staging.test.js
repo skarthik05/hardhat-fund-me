@@ -10,7 +10,7 @@ developmentChains.includes(network.name)
           const sendValue = ethers.utils.parseEther("0.1")
           beforeEach(async () => {
               deployer = (await getNamedAccounts()).deployer
-              fundMe = await ethers.getContract("FundMe", deployer)
+              fundMe = await ethers.getContractAt("FundMe", deployer)
           })
 
           it("allows people to fund and withdraw", async function () {
@@ -28,4 +28,4 @@ developmentChains.includes(network.name)
               )
               assert.equal(endingFundMeBalance.toString(), "0")
           })
-      }) 
+      })
